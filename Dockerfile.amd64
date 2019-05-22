@@ -41,24 +41,24 @@ RUN apt update \
     && apt autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
-/*RUN apt update \
-    && apt install maven -y \
-    && apt install default-jdk -y \
-    && apt autoclean -y \
-    && apt autoremove -y \
-    && rm -rf /var/lib/apt/lists/*
+#RUN apt update \
+#    && apt install maven -y \
+#    && apt install default-jdk -y \
+#    && apt autoclean -y \
+#    && apt autoremove -y \
+#    && rm -rf /var/lib/apt/lists/*
 
-RUN apt update \
-    && apt install gpg-agent -y \
-    && apt install wget -y \
-    && apt install fonts-liberation libappindicator3-1 libu2f-udev xdg-utils -y \
-    && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
-    && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
-    && dpkg -i google-chrome-stable_current_amd64.deb \
-    && apt autoclean -y \
-    && apt autoremove -y \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm -rf google-chrome-stable_current_amd64.deb*/
+#RUN apt update \
+#    && apt install gpg-agent -y \
+#    && apt install wget -y \
+#    && apt install fonts-liberation libappindicator3-1 libu2f-udev xdg-utils -y \
+#    && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
+#    && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+#    && dpkg -i google-chrome-stable_current_amd64.deb \
+#    && apt autoclean -y \
+#    && apt autoremove -y \
+#    && rm -rf /var/lib/apt/lists/* \
+#    && rm -rf google-chrome-stable_current_amd64.deb
  
 # Additional packages require ~600MB
 # libreoffice  pinta language-pack-zh-hant language-pack-gnome-zh-hant firefox-locale-zh-hant libreoffice-l10n-zh-tw
