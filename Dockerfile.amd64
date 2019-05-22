@@ -28,8 +28,10 @@ RUN add-apt-repository -y ppa:fcwu-tw/apps \
     && apt update \
     && apt install -y --no-install-recommends --allow-unauthenticated \
         xvfb x11vnc=0.9.16-1 \
-        vim-tiny firefox chromium-browser ttf-ubuntu-font-family ttf-wqy-zenhei  \
-    && add-apt-repository -r ppa:fcwu-tw/apps \
+        vim-tiny ttf-ubuntu-font-family ttf-wqy-zenhei  \
+    # Linha retirada do comando acima
+    # vim-tiny firefox chromium-browser ttf-ubuntu-font-family ttf-wqy-zenhei  \
+    # && add-apt-repository -r ppa:fcwu-tw/apps \
     && apt autoclean -y \
     && apt autoremove -y \
     && rm -rf /var/lib/apt/lists/*
@@ -50,7 +52,8 @@ RUN apt update \
 
 RUN apt update \
     && apt install wget -y \
-    && apt install fonts-liberation libappindicator3-1 libu2f-edev -y \
+    && apt install fonts-liberation libappindicator3-1 libu2f-udev -y \
+    && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add - \
     && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
     && dpkg -i google-chrome-stable_current_amd64.deb \
     && apt autoclean -y \
